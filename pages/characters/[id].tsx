@@ -1,4 +1,4 @@
-import { Character } from '../../types';
+import { Character, GetCharacterResults } from '../../types';
 import Image from 'next/image';
 import imageLoader from '../../imageLoader';
 
@@ -20,7 +20,7 @@ function CharacterPage({ character }: { character: Character }) {
 
 export async function getStaticPaths() {
   const res = await fetch('https://rickandmortyapi.com/api/character');
-  const { results }: GetCharactersResults = await res.json();
+  const { results }: GetCharacterResults = await res.json();
 
   return {
     paths: results.map((character) => {
