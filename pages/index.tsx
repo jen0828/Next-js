@@ -19,6 +19,7 @@ const Home: NextPage<{ characters: Character[] }> = ({ characters }) => {
         
         <Image
         loader={imageLoader}
+        unoptimized
         src={character.image}
         alt={character.name}
         width="200"

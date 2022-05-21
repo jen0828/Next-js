@@ -1,4 +1,4 @@
-const imageLoader = ({src}: string) => {
+const imageLoader = ({src}: { src: string}) => {
   return src
 }
 
