@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { Character, GetCharacterResults } from '../types';
 
-const Home: NextPage<{ characters: Character[] }> = ({ characters }: any) => {
+const Home: NextPage<{ characters: Character[] }> = ({ characters }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +13,19 @@ const Home: NextPage<{ characters: Character[] }> = ({ characters }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {characters.map((character) => {
-        return <li key={character.id}>{character.name}</li>;
+        return(
+         <div key={character.id}>{character.name}
+        
+        <Image
+        src={character.image}
+        alt={character.name}
+        width="200"
+        height="200"
+        />
+
+       
+        </div>
+        ) 
       })}
     </div>
   );
