@@ -7,6 +7,7 @@ import { Character } from '../../types';
 function CharacterPage({ character }: { character: Character }) {
   const router = useRouter();
 
+  console.log(router.query) //useRouter
   return (
     <div>
       <h1>{character.name}</h1>
