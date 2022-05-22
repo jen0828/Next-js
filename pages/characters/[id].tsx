@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import imageLoader from '../../imageLoader';
 import { Character } from '../../types';
+import Layout from '../../components/Layout';
 
 function CharacterPage({ character }: { character: Character }) {
   const router = useRouter();
 
-  console.log(router.query) //useRouter
+  console.log(router.query); //useRouter
   return (
     <div>
       <h1>{character.name}</h1>
@@ -23,6 +24,10 @@ function CharacterPage({ character }: { character: Character }) {
     </div>
   );
 }
+
+CharacterPage.getLayout = function getLayout(page: typeof CharacterPage) {
+  return <Layout>{page}</Layout>;
+};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
