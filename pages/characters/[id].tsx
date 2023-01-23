@@ -5,6 +5,7 @@ import imageLoader from '../../imageLoader';
 import { Character } from '../../types';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Character.module.css';
+import { ReactElement } from 'react';
 
 function CharacterPage({ character }: { character: Character }) {
   const router = useRouter();
@@ -25,7 +26,7 @@ function CharacterPage({ character }: { character: Character }) {
   );
 }
 
-CharacterPage.getLayout = function getLayout(page: typeof CharacterPage) {
+CharacterPage.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>;
 };
 
