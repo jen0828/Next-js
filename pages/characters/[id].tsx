@@ -9,7 +9,7 @@ import styles from '../../styles/Character.module.css';
 function CharacterPage({ character }: { character: Character }) {
   const router = useRouter();
 
-  console.log(router.query); //useRouter
+  //console.log(router.query); //useRouter
   return (
     <div className={styles.container}>
       <h1>{character.name}</h1>
